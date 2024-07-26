@@ -2,6 +2,8 @@ import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import SearchLocal from "@easyops-cn/docusaurus-search-local";
 import type * as Preset from "@docusaurus/preset-classic";
+// import remarkMath from "remark-math";
+// import rehypeKatex from "rehype-katex";
 
 const config: Config = {
   title: "3sam3's blog",
@@ -56,6 +58,16 @@ const config: Config = {
         theme: { customCss: "./src/css/custom.css" },
       } satisfies Preset.Options,
     ],
+    // [
+    //   "@docusaurus/preset-classic",
+    //   {
+    //     docs: {
+    //       path: "docs",
+    //       remarkPlugins: [remarkMath],
+    //       rehypePlugins: [rehypeKatex, { strict: false }],
+    //     },
+    //   },
+    // ],
   ],
 
   themeConfig: {
