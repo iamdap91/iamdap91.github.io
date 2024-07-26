@@ -14,21 +14,7 @@ tags: [linux, shell, docusaurus, plugins]
 
 ## Codeblock
 
-### Show Line Number
-
-```js showLineNumbers
-export const formatDate = (date: string) => {
-    const regex = /^(\d{4})(\d{2})(\d{2})$/;
-    if(!date.match(regex)) {
-        throw new Error('날짜 포맷에 맞지 않습니다.')
-    }
-
-    return date.replace(regex, '$1-$2-$3');
-};
-```
-
-### Line Highlighting
-
+### Show Line Number + Line Highlighting
 ```js showLineNumbers {2,7}
 export const formatDate = (date: string) => {
     const regex = /^(\d{4})(\d{2})(\d{2})$/;
@@ -47,6 +33,8 @@ const name = null;
 // This will error
 console.log(name.toUpperCase());
 ```
+
+---
 
 ## Diagram
 
@@ -71,7 +59,7 @@ erDiagram
           PRODUCT-CATEGORY ||--|{ PRODUCT : contains
           PRODUCT ||--o{ ORDER-ITEM : "ordered in"
 ```
-
+---
 ## Link
 
 ### Import Image
@@ -82,7 +70,7 @@ erDiagram
 
 [This Image Link!](../static/img/docusaurus.png)
 
-### Import Link
+### Import Video
 
 <iframe
   width="560"
