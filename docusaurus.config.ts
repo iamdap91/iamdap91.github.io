@@ -129,7 +129,7 @@ const config: Config = {
   tagline: "this is 3sam3's web",
   favicon: "img/b3_logo.svg",
   // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://iamdap91.github.io",
   baseUrl: "/",
   staticDirectories: ["static"],
   markdown: { mermaid: true },
@@ -137,7 +137,7 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "3sam3", // Usually your GitHub org/user name.
+  organizationName: "iamdap91", // Usually your GitHub org/user name.
   projectName: "3sam3-blog", // Usually your repo name.
 
   noIndex: false,
