@@ -139,6 +139,7 @@ const config: Config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "iamdap91", // Usually your GitHub org/user name.
   projectName: "iamdap91.github.io", // Usually your repo name.
+  deploymentBranch: "main",
 
   noIndex: false,
   onBrokenLinks: "throw",
