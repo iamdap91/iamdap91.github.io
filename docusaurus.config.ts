@@ -1,5 +1,6 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
+import SearchLocal from "@easyops-cn/docusaurus-search-local";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
@@ -9,16 +10,18 @@ const config: Config = {
   // Set the production url of your site here
   url: "https://your-docusaurus-site.example.com",
   baseUrl: "/",
-  markdown: {
-    mermaid: true,
-  },
   staticDirectories: ["static"],
-  themes: ["@docusaurus/theme-mermaid", "@docusaurus/theme-live-codeblock"],
+  markdown: { mermaid: true },
+  themes: [
+    "@docusaurus/theme-mermaid",
+    "@docusaurus/theme-live-codeblock",
+    [SearchLocal, { hashed: true, language: ["ko", "en"] }],
+  ],
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "3sam3", // Usually your GitHub org/user name.
-  projectName: "3sam3's blog", // Usually your repo name.
+  projectName: "3sam3-blog", // Usually your repo name.
 
   noIndex: false,
   onBrokenLinks: "throw",
@@ -32,8 +35,8 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "en",
-    locales: ["en", "kor"],
+    defaultLocale: "ko",
+    locales: ["ko", "en"],
   },
 
   presets: [
@@ -93,14 +96,8 @@ const config: Config = {
         {
           title: "Docs",
           items: [
-            {
-              label: "Blogs",
-              to: "/",
-            },
-            {
-              label: "Tech Posting",
-              to: "/tech-posting",
-            },
+            { label: "Blogs", to: "/" },
+            // { label: "Tech Posting", to: "/tech-posting" },
           ],
         },
         {
