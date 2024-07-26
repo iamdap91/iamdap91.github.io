@@ -20,7 +20,7 @@ const themeConfig = {
     items: [
       {
         type: "docSidebar",
-        sidebarId: "authGeneratedSideBar",
+        sidebarId: "coffeeSideBar",
         position: "left",
         label: "Tech Posting",
       },
@@ -39,6 +39,10 @@ const themeConfig = {
       {
         href: "https://observablehq.com/user/@3sam3",
         label: "ObservableHQ",
+        position: "right",
+      },
+      {
+        href: "https://www.buymeacoffee.com/iamdap91",
         position: "right",
       },
     ],
