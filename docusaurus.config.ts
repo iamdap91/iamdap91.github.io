@@ -12,6 +12,7 @@ const config: Config = {
   markdown: {
     mermaid: true,
   },
+  staticDirectories: ["static"],
   themes: ["@docusaurus/theme-mermaid", "@docusaurus/theme-live-codeblock"],
 
   // GitHub pages deployment config.
@@ -139,6 +140,17 @@ const config: Config = {
         // maxTextSize: 100,
       },
     },
+    magicComments: [
+      {
+        className: "theme-code-block-highlighted-line",
+        line: "highlight-next-line",
+        block: { start: "highlight-start", end: "highlight-end" },
+      },
+      {
+        className: "code-block-error-line",
+        line: "This will error",
+      },
+    ],
   } satisfies Preset.ThemeConfig,
 };
 

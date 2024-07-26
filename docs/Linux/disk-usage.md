@@ -2,7 +2,7 @@
 slug: Disk Usage
 title: Disk Usage
 authors: [3sam3]
-tags: [linux, du, shell]
+tags: [linux, shell, du, fdisk, df, iostat, lsblk]
 ---
 
 # Disk Usage

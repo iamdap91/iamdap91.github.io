@@ -37,12 +37,34 @@ export const formatDate = (date: string) => {
 };
 ```
 
-
-In JavaScript, trying to access properties on `null` will error.
+### Error Highlighting
 
 ```js
 const name = null;
 // This will error
 console.log(name.toUpperCase());
-// Uncaught TypeError: Cannot read properties of null (reading 'toUpperCase')
+```
+
+## Diagram
+
+I personally prefer D2 diagram, but It's the only diagram docusaurus offers.
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+```mermaid
+erDiagram
+          CUSTOMER }|..|{ DELIVERY-ADDRESS : has
+          CUSTOMER ||--o{ ORDER : places
+          CUSTOMER ||--o{ INVOICE : "liable for"
+          DELIVERY-ADDRESS ||--o{ ORDER : receives
+          INVOICE ||--|{ ORDER : covers
+          ORDER ||--|{ ORDER-ITEM : includes
+          PRODUCT-CATEGORY ||--|{ PRODUCT : contains
+          PRODUCT ||--o{ ORDER-ITEM : "ordered in"
 ```
