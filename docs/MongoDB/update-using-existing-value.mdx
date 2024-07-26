@@ -1,0 +1,49 @@
+---
+slug: update-using-existing-value
+title: Update Using Document Value
+authors: [3sam3]
+tags: [mongo, mongoose, javascript, query]
+---
+
+```mermaid
+%%{init: {"flowchart": {"htmlLabels": false}} }%%
+flowchart LR
+    source --> mongoose_query
+    mongoose_query --> dest
+
+```
+
+## source
+
+```js
+{
+	"Class_Grade": "b"
+	"Homework_Grade": "c"
+}
+```
+
+## process
+
+```js
+db.collection.updateMany({}, [
+  {
+    $set: {
+      Grades: {
+        Class_Grade: "$Class_Grade",
+        Homework_Grade: "$Homework_Grade",
+      },
+    },
+  },
+]);
+```
+
+## dest
+
+```js
+{
+    "Grades": {
+	    "Class_Grade": "b",
+	    "Homework_Grade": "c"
+    }
+}
+```
