@@ -1,0 +1,35 @@
+---
+slug: if-statement
+title: If statement
+authors: [3sam3]
+tags: [linux, shell, if]
+---
+
+```js
+#!/bin/bash
+
+firstFunc() {
+  echo "firstFunc param: $1 $2"
+}
+
+secondFunc() {
+	echo "secondFunc param: $1"
+}
+
+# call
+firstFunc 1 2
+secondFunc 3
+```
+
+
+```js
+#!/bin/bash
+func() {
+  echo "\$@: $@"           // whole params
+  echo "\$#: $#"           // number of params
+  echo "\$1, \$2: $1 $2"   // n th param
+}
+
+# 함수 호출
+func 1 2
+```
