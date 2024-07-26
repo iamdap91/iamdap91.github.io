@@ -1,0 +1,16 @@
+---
+slug: ran-in-root
+title: Ran in Root
+authors: [3sam3]
+tags: [linux, permission, shell]
+---
+
+# Check ran in root privilege
+
+```bash
+#!/bin/bash
+if [ "$EUID" -ne 0 ]
+	then echo "please run as root"
+	exit
+fi
+```
