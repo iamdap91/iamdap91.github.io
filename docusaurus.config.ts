@@ -4,15 +4,25 @@ import SearchLocal from "@easyops-cn/docusaurus-search-local";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const themes = [
+  [
+    "@easyops-cn/docusaurus-search-local",
+    {
+      docsRouteBasePath: "/tech-posting",
+      blogRouteBasePath: "/blog",
+      hashed: true,
+    },
+  ],
   "@docusaurus/theme-mermaid",
   "@docusaurus/theme-live-codeblock",
-  [SearchLocal, { hashed: true, language: ["ko", "en"] }],
 ];
 const themeConfig = {
   // Replace with your project's social card
   image: "img/docusaurus-social-card.jpg",
   metadata: [
-    { name: "keywords", content: "blog, dev, linux, nestjs, nodejs, node" },
+    {
+      name: "keywords",
+      content: "blog, dev, linux, nestjs, nodejs, node, shell, utilities",
+    },
   ],
   navbar: {
     title: "3sam3's blog",
@@ -106,12 +116,10 @@ const themeConfig = {
     },
   ],
 } satisfies Preset.ThemeConfig;
-const plugins = [
-  ["@docusaurus/plugin-client-redirects", { fromExtensions: ["html"] }],
-];
+const plugins = [];
 const presets = [
   [
-    "classic",
+    "@docusaurus/preset-classic",
     {
       docs: {
         sidebarPath: "./sidebars.ts",
@@ -138,9 +146,6 @@ const config: Config = {
   staticDirectories: ["static"],
   markdown: { mermaid: true },
   themes,
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
   organizationName: "iamdap91", // Usually your GitHub org/user name.
   projectName: "iamdap91.github.io", // Usually your repo name.
   deploymentBranch: "main",
@@ -148,7 +153,7 @@ const config: Config = {
   noIndex: false,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  i18n: { defaultLocale: "ko", locales: ["ko", "en"] },
+  i18n: { defaultLocale: "en", locales: ["en", "ko"] },
 
   plugins,
   presets,
