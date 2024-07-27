@@ -1,0 +1,47 @@
+---
+slug: aes-256-cdc
+title: AES-256-CDC in nodejs
+authors: [3sam3]
+tags: [mongo, javascript, query, nodejs, algorithm, encryption, decryption]
+---
+
+## Encryption Component
+
+```ts showLineNumbers
+import {
+  BinaryLike,
+  createCipheriv,
+  createDecipheriv,
+  randomBytes,
+} from "crypto";
+
+const ALGORITHM = "aes-256-cbc"; // algorithm
+const COORDINATE_ENCRYPTION_KEY = "ENCRYPTION_KEY"; // value like salt or pepper
+
+export const encryptAES256 = (value: string, iv: BinaryLike) => {
+  const cipher = createCipheriv(ALGORITHM, COORDINATE_ENCRYPTION_KEY, iv);
+  let encrypted = cipher.update(value, "utf8", "hex");
+  encrypted += cipher.final("hex");
+
+  return encrypted;
+};
+
+export const decryptAES256 = (value: string, iv: BinaryLike) => {
+  const decipher = createDecipheriv(ALGORITHM, COORDINATE_ENCRYPTION_KEY, iv);
+  let decrypted = decipher.update(value, "hex", "utf8");
+  decrypted += decipher.final("utf8");
+
+  return decrypted;
+};
+```
+
+## Execution
+
+```js showLineNumbers
+const iv = crypto.randomBytes(16); // for stronger encryption
+
+const encryptedValue = encryptAES256("hello world", iv);
+console.log(encryptedValue); // 1fa86480360f5497ed036bd8acbc0958
+const decryptedValue = decryptAES256(encryptedValue, iv);
+console.log(hashedValue); // hello world
+```
