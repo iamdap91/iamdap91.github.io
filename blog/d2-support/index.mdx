@@ -1,0 +1,167 @@
+---
+slug: d2-support
+title: Using D2 diagram in Docusaurus
+authors: [3sam3]
+tags: [plugins, docusaurus, diagram, d2, planturml, kroki.io]
+date: 2024-07-27T15:50:00
+---
+
+```kroki type=d2
+direction: right
+vars: {
+	arrow: {
+		target-arrowhead: {
+			shape: arrow
+		}
+	}
+	diamond: {
+		target-arrowhead: {
+			shape: arrow
+		}
+	}
+	dash: {
+		style: {
+			stroke-dash: 3
+			animated: true
+		}
+	}
+
+
+	pointer-with-dash: {
+		target-arrowhead: {
+			style.filled: false
+		}
+		style: {
+			stroke-dash: 3
+			animated: true
+		}
+	}
+	arrow-with-dash: {
+		target-arrowhead: {
+			shape: arrow
+			style.filled: false
+		}
+		style: {
+			stroke-dash: 3
+			animated: true
+		}
+	}
+	diamond-with-dash: {
+		target-arrowhead: {
+			shape: diamond
+			style.filled: false
+		}
+		style: {
+			stroke-dash: 3
+			animated: true
+		}
+	}
+	postgres: {
+		shape: cylinder
+		icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
+	}
+	mongoDB: {
+		shape: cylinder
+		icon: https://icons.terrastruct.com/dev%2Fmongodb.svg
+	}
+	redis: {
+		shape: cylinder
+		icon: https://icons.terrastruct.com/dev%2Fredis.svg
+	}
+	server: {
+      shape: image
+      icon: https://icons.terrastruct.com/tech/022-server.svg
+    }
+}
+
+A -> B: {...${arrow-with-dash}}
+B -> C: {...${diamond-with-dash}}
+
+postgres: ${postgres}
+mongoDB: ${mongoDB}
+redis: ${redis}
+
+A -> postgres
+B -> mongoDB
+C -> server
+server -> redis
+
+server: ${server}
+
+```
+
+## Overview
+
+> I found a awesome third party library of `Docusaurus`.
+
+I'd like to show you guys how I applied this.
+
+## How it works
+
+Basically It's bunch of a codeblock as we commonly use.
+
+```text showLineNumbers
+same old codeblock like this.
+```
+
+> Sequence diagram of how it works
+
+<div style={{width: '70%', flex: true, justifyContent: "center"}}>
+```kroki type=d2
+  shape: sequence_diagram
+  client: your blog (possibly client)
+  kroki: kroki.io
+
+client -> kroki.1: compile request
+kroki.1 -> client: compiled data
+client -> client: draw diagram
+
+````
+</div>
+
+## Usage
+> If you want advanced configuration see [Offical document](https://github.com/show-docs/remark-kroki)
+### Installation
+```bash
+$ npm install remark-kroki --save-dev
+````
+
+### Usage
+
+```ts
+// docusaurus.config.ts
+import { remarkKroki } from "remark-kroki";
+
+export default {
+  presets: [
+    [
+      // you might find "@docusaurus/preset-classic" but no worry.  Those are same thing.
+      "classic",
+      {
+        docs: {
+          remarkPlugins: [[remarkKroki, { server: "https://kroki.io" }]],
+          rehypePlugins: [
+            [
+              rehypeRaw,
+              {
+                passThrough: [
+                  "mdxFlowExpression",
+                  "mdxJsxFlowElement",
+                  "mdxJsxTextElement",
+                  "mdxTextExpression",
+                  "mdxjsEsm",
+                ],
+              },
+            ],
+          ],
+        },
+      },
+    ],
+  ],
+};
+```
+
+## Reference
+
+- [Discussion about D2 native support in docusaurus](https://github.com/facebook/docusaurus/discussions/9608)
+- [Gitbug of remark-kroki](https://github.com/show-docs/remark-kroki)
