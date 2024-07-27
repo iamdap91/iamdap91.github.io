@@ -1,2 +1,5 @@
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: https://iamdap91.github.io/sitemap.xml
+

@@ -41,6 +41,10 @@ const themeConfig = {
       name: "keywords",
       content: "blog, dev, linux, nestjs, nodejs, node, shell, utilities",
     },
+    {
+      name: "google-site-verification",
+      content: "MZY4D3mVNRsMGGIj_ndm1BI651AGSrju1bsHRUdyOG8",
+    },
   ],
   navbar: {
     title: "3sam3's blog",
@@ -183,7 +187,7 @@ const config: Config = {
   favicon: "img/b3_logo.svg",
   url: "https://iamdap91.github.io",
   baseUrl: "/",
-  trailingSlash: false,
+  trailingSlash: true,
   staticDirectories: ["static"],
   markdown: { mermaid: true },
   themes,
