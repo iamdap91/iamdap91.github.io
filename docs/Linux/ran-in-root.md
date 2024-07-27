@@ -7,7 +7,7 @@ tags: [linux, permission, shell]
 
 # Check ran in root privilege
 
-```bash
+```bash showLineNumbers {2}
 #!/bin/bash
 if [ "$EUID" -ne 0 ]
 	then echo "please run as root"

@@ -98,6 +98,13 @@ const themeConfig = {
         line: "This will error",
       },
     ],
+    additionalLanguages: [
+      "shell-session",
+      "rust",
+      "powershell",
+      "java",
+      "bash",
+    ],
   },
   mermaid: {
     options: {

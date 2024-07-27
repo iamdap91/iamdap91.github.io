@@ -5,7 +5,7 @@ authors: [3sam3]
 tags: [linux, shell, if]
 ---
 
-```js
+```bash showLineNumbers
 #!/bin/bash
 
 firstFunc() {
@@ -13,7 +13,7 @@ firstFunc() {
 }
 
 secondFunc() {
-	echo "secondFunc param: $1"
+  echo "secondFunc param: $1"
 }
 
 # call
@@ -21,8 +21,7 @@ firstFunc 1 2
 secondFunc 3
 ```
 
-
-```js
+```bash showLineNumbers
 #!/bin/bash
 func() {
   echo "\$@: $@"           // whole params

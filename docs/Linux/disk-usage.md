@@ -9,28 +9,28 @@ tags: [linux, shell, du, fdisk, df, iostat, lsblk]
 
 ## du
 > Disk Usage
-```bash
+```bash {2} showLineNumbers
 #!/bin/bash
 du -hs
 ``` 
 
 ## df
 > Display Free disk space
-```bash
+```bash {2} showLineNumbers
 #!/bin/bash
 df -h
 ``` 
 
 ## fdisk
 > DOS partition maintenance program.
-```bash
+```bash {2} showLineNumbers
 #!/bin/bash
 fdisk
 ```
 
 ## iostat
 > report I/O statistics
-```bash
+```bash {2} showLineNumbers
 #!/bin/bash
 iostat -d
 ```
@@ -38,8 +38,7 @@ iostat -d
 
 ## lsblk
 > list block devices
-```bash
+```bash {2} showLineNumbers
 #!/bin/bash
-lsblk
 lsblk -d -o name, rota
 ```

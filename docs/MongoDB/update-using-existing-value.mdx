@@ -15,16 +15,16 @@ flowchart LR
 
 ## source
 
-```js
+```json showLineNumbers
 {
-	"Class_Grade": "b"
-	"Homework_Grade": "c"
+  "Class_Grade": "b",
+  "Homework_Grade": "c"
 }
 ```
 
 ## process
 
-```js
+```js showLineNumbers
 db.collection.updateMany({}, [
   {
     $set: {
@@ -39,11 +39,11 @@ db.collection.updateMany({}, [
 
 ## dest
 
-```js
+```json showLineNumbers {2}
 {
-    "Grades": {
-	    "Class_Grade": "b",
-	    "Homework_Grade": "c"
-    }
+  "Grades": {
+    "Class_Grade": "b",
+    "Homework_Grade": "c"
+  }
 }
 ```
