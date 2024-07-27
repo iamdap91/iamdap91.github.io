@@ -9,6 +9,9 @@ date: 2024-07-27T15:50:00
 ```kroki type=d2
 direction: right
 vars: {
+    d2-config: {
+      sketch: true
+    }
 	arrow: {
 		target-arrowhead: {
 			shape: arrow
@@ -108,9 +111,14 @@ same old codeblock like this.
 
 <div style={{width: '70%', flex: true, justifyContent: "center"}}>
 ```kroki type=d2
-  shape: sequence_diagram
-  client: your blog (possibly client)
-  kroki: kroki.io
+vars: {
+  d2-config: {
+    sketch: true
+  }
+}
+shape: sequence_diagram
+client: client (possibly blog)
+kroki: kroki.io
 
 client -> kroki.1: compile request
 kroki.1 -> client: compiled data
@@ -119,7 +127,7 @@ client -> client: draw diagram
 ````
 </div>
 
-## Usage
+## How to use D2
 > If you want advanced configuration see [Offical document](https://github.com/show-docs/remark-kroki)
 ### Installation
 ```bash

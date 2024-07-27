@@ -1,0 +1,133 @@
+---
+slug: d2-preset
+title: D2 Preset
+authors: [3sam3]
+tags: [d2, diagram, kroki.io]
+---
+
+## Lines
+
+```kroki type=d2
+direction: right
+  vars: {
+    d2-config: {
+      sketch: true
+  }
+  arrow: {
+    target-arrowhead: {
+      shape: arrow
+    }
+  }
+  diamond: {
+    target-arrowhead: {
+      shape: diamond
+      #style.filled: true
+    }
+  }
+  circle: {
+    target-arrowhead: {
+      shape: circle
+      style.filled: true
+    }
+  }
+  dash: {
+    style: {
+      stroke-dash: 3
+      animated: true
+    }
+  }
+}
+
+a -> b: arrow pointer {...${arrow}}
+a -> c: diamond pointer {...${diamond}}
+a -> d: circler pointer {...${circle}}
+a -> e: dash {...${dash}}
+```
+
+### Codes
+
+```
+direction: right
+vars: {
+  d2-config.sketch: true
+  arrow: {
+    target-arrowhead: {
+      shape: arrow
+    }
+  }
+  diamond: {
+    target-arrowhead: {
+      shape: diamond
+      #style.filled: true
+    }
+  }
+  circle: {
+  target-arrowhead: {
+      shape: circle
+      #style.filled: true
+    }
+  }
+  dash: {
+    style: {
+      stroke-dash: 3
+      animated: true
+    }
+  }
+}
+
+a -> b: arrow pointer {...${arrow}}
+a -> c: diamond pointer {...${diamond}}
+a - d: circler pointer {...${circle}}
+```
+
+## Objects
+
+```kroki type=d2
+vars: {
+  d2-config.sketch: true
+}
+postgres: {
+  shape: cylinder
+  icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
+}
+mongoDB: {
+  shape: cylinder
+  icon: https://icons.terrastruct.com/dev%2Fmongodb.svg
+}
+redis: {
+  shape: cylinder
+  icon: https://icons.terrastruct.com/dev%2Fredis.svg
+}
+server: {
+  shape: image
+  icon: https://icons.terrastruct.com/tech/022-server.svg
+}
+github: {
+  shape: image
+  icon: https://icons.terrastruct.com/dev/github.svg
+}
+```
+
+### Codes
+```
+postgres: {
+  shape: cylinder
+  icon: https://icons.terrastruct.com/dev%2Fpostgresql.svg
+}
+mongoDB: {
+  shape: cylinder
+  icon: https://icons.terrastruct.com/dev%2Fmongodb.svg
+}
+redis: {
+  shape: cylinder
+  icon: https://icons.terrastruct.com/dev%2Fredis.svg
+}
+server: {
+  shape: image
+  icon: https://icons.terrastruct.com/tech/022-server.svg
+}
+github: {
+  shape: image
+  icon: https://icons.terrastruct.com/dev/github.svg
+}
+```
