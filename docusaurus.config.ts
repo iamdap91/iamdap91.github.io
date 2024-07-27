@@ -126,6 +126,7 @@ const themeConfig = {
       "powershell",
       "java",
       "bash",
+      "json",
     ],
   },
   mermaid: {
