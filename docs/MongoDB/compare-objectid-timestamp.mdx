@@ -1,0 +1,17 @@
+---
+slug: compare-objectid-timestamp
+title: Compare ObjectId Timestamp
+authors: [3sam3]
+tags: [mongo, mongoose, javascript, query]
+---
+
+```js showLineNumbers {8}
+import { Types } from "mongoose";
+
+const sample1 = new Types.ObjectId("6576bc1fab10c30a60f42fe5").getTimestamp();
+const sample2 = new Types.ObjectId("657a67dd58c0d662e87f368c").getTimestamp();
+
+console.log(`prev: ${sample1}`);
+console.log(`new: ${sample2}`);
+console.log(sample1 > sample2); // false
+```
