@@ -26,7 +26,7 @@ const themes = [
     "@easyops-cn/docusaurus-search-local",
     {
       docsRouteBasePath: "/tech-posting",
-      blogRouteBasePath: "/blog",
+      blogRouteBasePath: "/",
       hashed: true,
     },
   ],
