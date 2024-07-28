@@ -25,7 +25,7 @@ const themes = [
   [
     "@easyops-cn/docusaurus-search-local",
     {
-      docsRouteBasePath: "/tech-posting",
+      docsRouteBasePath: "/tech-hack",
       blogRouteBasePath: "/",
       hashed: true,
     },
@@ -54,7 +54,7 @@ const themeConfig = {
         type: "docSidebar",
         sidebarId: "coffeeSideBar",
         position: "left",
-        label: "Tech Posting",
+        label: "Tech Hacks",
       },
       { to: "/", label: "Blog", position: "left" },
 
@@ -85,8 +85,8 @@ const themeConfig = {
       {
         title: "Docs",
         items: [
-          { label: "Blogs", to: "/" },
-          { label: "Tech Posting", to: "/tech-posting/Linux/disk-usage" },
+          { label: "Blog", to: "/" },
+          { label: "Tech Hacks", to: "/tech-hack/Linux/disk-usage" },
         ],
       },
       {
@@ -155,7 +155,7 @@ const presets = [
         ...d2PluginConfig,
         sidebarPath: "./sidebars.ts",
         editUrl: "https://github.com/iamdap91",
-        routeBasePath: "/tech-posting",
+        routeBasePath: "/tech-hack",
       },
       blog: {
         ...d2PluginConfig,
