@@ -38,7 +38,6 @@ function BlogPostPageContent({ sidebar, children }) {
               minHeadingLevel={tocMinHeadingLevel}
               maxHeadingLevel={tocMaxHeadingLevel}
             />
-            {/*<div>asdfafs</div>*/}
           </>
         ) : undefined
       }
