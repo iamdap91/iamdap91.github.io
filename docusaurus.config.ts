@@ -86,7 +86,7 @@ const themeConfig = {
         title: "Docs",
         items: [
           { label: "Blogs", to: "/" },
-          // { label: "Tech Posting", to: "/tech-posting" },
+          { label: "Tech Posting", to: "/tech-posting/Linux/disk-usage" },
         ],
       },
       {

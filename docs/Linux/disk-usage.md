@@ -1,5 +1,5 @@
 ---
-slug: Disk Usage
+slug: disk-usage
 title: Disk Usage
 authors: [3sam3]
 tags: [linux, shell, du, fdisk, df, iostat, lsblk]
