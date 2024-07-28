@@ -1,0 +1,21 @@
+---
+slug: sed
+title: sed (Stream Editor)
+authors: [3sam3]
+tags: [linux, shell, sed]
+---
+
+## Simple usage
+
+```bash
+#!/bin/bash
+
+# replace
+echo "this is test" | sed "s/test/real/"
+# this is real
+
+
+# replace many
+echo "cat dog" | sed -e "s/cat/tiger/; s/dog/wolf/"
+# tiger wolf
+```
