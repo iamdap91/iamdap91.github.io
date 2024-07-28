@@ -5,7 +5,7 @@ authors: [3sam3]
 tags: [linux, permission, shell]
 ---
 
-# Check ran in root privilege
+## Code
 
 ```bash showLineNumbers {2}
 #!/bin/bash
