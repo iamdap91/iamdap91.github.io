@@ -77,36 +77,33 @@ It only builds root project of your repository.
 ```
 
 > `SWC`
->
-> > ![swc-build-time](./swc-build-time.png)
+> ![swc-build-time](./swc-build-time.png)
 
 > `Webpack`
->
-> > ![webpack-build-time](./webpack-build-time.png)
+> ![webpack-build-time](./webpack-build-time.png)
 
 Of course, I configured a `swc-loader` in `webpack`.\
-and I checked `swc` configuration was imported to `webpack`.
+and I double checked `swc` configuration was imported to `webpack`.
 
-I'm not sure what's the problem. <HighlightOrange text="but with webpack, swc lost it's performance"/>
+I'm not sure whatw as the problem. <HighlightOrange text="but with webpack, swc performance goes down."/>
 
 And One more thing.
 
 > `Webpack` bundles your project files into a one big chunk.
->
-> > ![webpack-result](./webpack-result.png)
+> ![webpack-result](./webpack-result.png)
 
-If you're using `TypeORM` or `MikroORM`, and imports your entities like this, \
+> If you're using `TypeORM` or `MikroORM`, You'd probably imports your entities like this. \
 This will break your app.
-
-There is a way to not to bundle your files by configuring entry and output of `webpack.config`. \
+>```ts {2,3} showLineNumbers
+> {
+> entities: ['dist/**/*.entity.js', 'libs/**/*.entity.js'],
+> entitiesTs: ['libs/**/*.entity.ts']
+> }
+> ```
+> There is a way to not to bundle your files by configuring entry and output of `webpack.config`. \
 But, I won't recommend.
 
-```ts {2,3} showLineNumbers
-{
-  entities: ['dist/**/*.entity.js', 'libs/**/*.entity.js'],
-  entitiesTs: ['libs/**/*.entity.ts']
-}
-```
+
 
 ## My Conclusion
 
