@@ -1,6 +1,6 @@
 ---
 slug: nest10-swc-in-monorepo
-title: Don't use swc when you're using Nestjs Monorepo
+title: Don't use SWC when you're using Nestjs Monorepo
 authors: [3sam3]
 tags: [swc, nestjs, nodejs, webpack]
 date: 2024-07-28T15:00:00
@@ -27,14 +27,13 @@ There were some changes like
 
 <HighlightOrange text="But, We're only going to talk about SWC" />
 
-## About Integration
+## SWC Integration
 
 ```bash showLineNumbers
 npm i --save-dev @swc/cli @swc/core
 nest start -b swc
 ```
-
-Those code are all you need to do when using `SWC` builder. \
+That's all you need to do to use `SWC`. \
 It's lightning fast when you use in standard mode.
 
 ## In Monorepo
