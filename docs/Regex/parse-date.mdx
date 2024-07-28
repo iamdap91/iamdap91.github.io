@@ -1,0 +1,23 @@
+---
+slug: parse-date
+title: Parsing Date Using Regex
+authors: [3sam3]
+tags: [regex, nodejs, node, date, parse]
+---
+
+## Code
+
+```js showLineNumbers {2,7}
+export const formatDate = (date: string) => {
+    const regex = /^(\d{4})(\d{2})(\d{2})$/;
+    if(!date.match(regex)) {
+        throw new Error('Wrong date format')
+    }
+
+    return date.replace(regex, '$1-$2-$3');
+};
+
+const date = formatDate('20220202');
+console.log(date); // 2022-02-02
+
+```
