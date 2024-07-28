@@ -178,10 +178,10 @@ const presets = [
         routeBasePath: "/",
       },
       theme: { customCss: "./src/css/custom.css" },
-      gtag: {
-        trackingID: "ca-pub-3076159641750066",
-        anonymizeIP: true,
-      },
+      // gtag: {
+      //   trackingID: "ca-pub-3076159641750066",
+      //   anonymizeIP: true,
+      // },
     } satisfies Preset.Options,
   ],
 ];
@@ -215,6 +215,7 @@ const config: Config = {
   plugins,
   presets,
   themeConfig,
+  scripts,
 };
 
 export default config;
