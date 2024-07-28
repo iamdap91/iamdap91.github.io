@@ -178,8 +178,19 @@ const presets = [
         routeBasePath: "/",
       },
       theme: { customCss: "./src/css/custom.css" },
+      gtag: {
+        trackingID: "ca-pub-3076159641750066",
+        anonymizeIP: true,
+      },
     } satisfies Preset.Options,
   ],
+];
+const scripts = [
+  {
+    src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3076159641750066",
+    async: true,
+    crossorigin: "anonymous",
+  },
 ];
 
 const config: Config = {
