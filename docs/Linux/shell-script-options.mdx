@@ -1,0 +1,70 @@
+---
+slug: shell-script-options
+title: Shell Script with option
+authors: [3sam3]
+tags: [linux, shell, if, statement, options]
+---
+
+## Usage
+```bash showLineNumbers
+#!/bin/bash
+echo
+while [ -n "$1" ] # if first argument str length is not 0
+do
+  #echo $1
+  case "$1" in
+    -a) echo "found the -a option";;
+    -b) param="$2"
+        echo "Found the -b option, with parameter value $param";;
+    -c) echo "Founc the -c option";;
+    --) shift
+        break;;
+    *) echo "$1 is not an option";;
+  esac
+  shift     # shift to next param
+done
+#
+count=1
+for param in "$@"
+do
+  echo "Parameter #$count: $param"
+  count=$[ $count + 1 ]
+done
+```
+
+```bash
+bash script.sh -a -b bbb -c
+#found the -a option
+#Found the -b option, with parameter value bbb
+#bbb is not an option
+#c is not an option
+```
+
+## Advanced Usage
+```bash showLineNumbers {2}
+#!/bin/bash
+set -- $(getopt -q ab:cd "$@") # Now you can use options like this "-abc"
+
+echo
+while [ -n "$1" ] # if first argument str length is not 0
+do
+  #echo $1
+  case "$1" in
+    -a) echo "found the -a option";;
+    -b) param="$2"
+        echo "Found the -b option, with parameter value $param";;
+    -c) echo "Founc the -c option";;
+    --) shift
+        break;;
+    *) echo "$1 is not an option";;
+  esac
+  shift     # shift to next param
+done
+#
+count=1
+for param in "$@"
+do
+  echo "Parameter #$count: $param"
+  count=$[ $count + 1 ]
+done
+```
