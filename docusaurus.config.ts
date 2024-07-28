@@ -176,6 +176,8 @@ const presets = [
         editUrl: "https://github.com/iamdap91",
         showReadingTime: true,
         routeBasePath: "/",
+        blogSidebarTitle: "All posts",
+        blogSidebarCount: "ALL",
       },
       theme: { customCss: "./src/css/custom.css" },
       // gtag: {
