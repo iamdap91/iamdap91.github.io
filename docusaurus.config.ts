@@ -47,7 +47,7 @@ const themeConfig = {
     },
   ],
   navbar: {
-    title: "3sam3's blog",
+    title: "3sam3's Inventory",
     logo: { src: "img/b3_logo.svg" },
     items: [
       {
@@ -194,7 +194,7 @@ const scripts = [
 ];
 
 const config: Config = {
-  title: "3sam3's blog",
+  title: "3sam3's Inventory",
   tagline: "this is 3sam3's web",
   favicon: "img/b3_logo.svg",
   url: "https://iamdap91.github.io",
