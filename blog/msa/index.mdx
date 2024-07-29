@@ -1,0 +1,131 @@
+---
+slug: how-we-should-use-msa
+title: MSA consideration
+authors: [3sam3]
+tags: [msa, architecture, design, design pattern]
+date: 2024-07-29T00:00:00
+---
+
+import HighlightOrange from "../../src/components/utils/highlight-orange";
+
+## Before We Start
+
+> Let's make sure we're on same page with terminology
+
+### Domain
+
+> A unit that logically implements actions and responsibilities (This could either be logic or policy)
+
+I won't make a diagram for this.
+
+### Service
+
+> A unit that provides data/behavior as a single function (`domain + data`)
+
+If It's about product, it could be named product service.
+
+```kroki type=d2
+vars: {
+  d2-config.sketch: true
+}
+
+product-service: {
+  domain
+  data: {shape: cylinder}
+}
+
+shipping-service: {
+  domain
+  data: {shape: cylinder}
+}
+```
+
+### Application
+
+> A unit that combines one or more services and a user interface (`service + user interface`)
+
+```kroki type=d2
+vars: {
+  d2-config.sketch: true
+  domain: {
+    domain
+    data: { shape: cylinder }
+  }
+}
+
+order-service: {...${domain}}
+product-service: {...${domain}}
+shipping-service: {...${domain}}
+
+order-management-application -> order-service
+order-management-application -> product-service
+
+shipping-management-application -> product-service
+shipping-management-application -> shipping-service
+```
+
+## What is MSA?
+
+> It is about breaking your applications into small pieces(services) which does the specific jobs that matches their domain.
+
+That is why It is called `Micro Service Architecture`
+
+### Should I go for it?
+
+I can't give you an answer. \
+It's your call.
+
+Just remember this before you adopt MSA.
+<HighlightOrange text="Martin Fowler said," />
+
+> **Don't even consider microservices unless you have a system that's too complex to manage as a monolith.**
+
+### Bright side
+- Can prevent the failure of Service A from propagating to Services B, C, and D.
+- Able to implement distributed systems flexibly and consistently
+- Free from considerations in adopting HW / SW technologies. (just matching interface will do)
+- Reduction in build & test time.
+
+### Dark side
+- Development complexity and proficiency
+  - transaction management
+  - testing (when multiple services are involved)
+  - maintenance (troubleshooting, monitoring)
+
+## Some points I want to talk about MSA
+> Personally, I think It's all about **making boundary of domain.**
+
+Do `Event Storming` and determine where things should be. \
+We'll start from there.
+
+### Avoid Too Many Microservices Being Made
+
+I saw a ugly case. \
+There were so many micro-services, There were some services no one knows. Heard the name, but had no idea what does that do.
+
+If you consider adopting MSA, \
+You need to compromise at the point where your team can manage when defining the domain. \
+Even though, the functions that provides doesn't match It's name.
+<HighlightOrange text="Try not to make new domain service every time."/>
+\
+If you already have too many micro-services that you can't handle, merge them.
+
+
+### If `DB transaction` is viable option, use them
+
+Separating all the Database into pieces and implementing `Distributed Transaction` could be a stupid approach.
+
+I'm not saying `Distributed Transaction` such as `SAGA`, `2PC` are not good.
+
+Those are cool stuffs, but It's going to take a lot of resource develop/maintaining them.
+
+What I'm trying to say is, `DB transaction` is what you can almost always rely on.
+
+### Filter out domains that can't be changed due to external dependencies
+Don't mess with them.
+
+
+## Ref
+- [Monolithic to MSA](https://www.joinc.co.kr/w/FrontPage/man/12/monolithicToMSA)
+- [Event-Driven Architecture Done Right](https://www.youtube.com/watch?v=A_mstzRGfIE&t=1445s&ab_channel=DevoxxPoland)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A_mstzRGfIE?si=jJewhaU2mGxOfdTn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
