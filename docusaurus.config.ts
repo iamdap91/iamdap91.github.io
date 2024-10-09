@@ -157,6 +157,7 @@ const plugins = [
   [
     "@docusaurus/plugin-content-docs",
     {
+      ...d2PluginConfig,
       id: "books",
       path: "books",
       routeBasePath: "/books",
