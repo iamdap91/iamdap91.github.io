@@ -1,5 +1,5 @@
 ---
-title: Index of Books Category
+title: Index
 authors: [3sam3]
 date: 2024-10-09T15:50:00
 ---
