@@ -25,7 +25,7 @@ const themes = [
   [
     "@easyops-cn/docusaurus-search-local",
     {
-      docsRouteBasePath: "/tech-hack",
+      docsRouteBasePath: ["/tech-hack", "/books"],
       blogRouteBasePath: "/",
       hashed: true,
     },
@@ -55,6 +55,12 @@ const themeConfig = {
         sidebarId: "coffeeSideBar",
         position: "left",
         label: "Tech Hacks",
+      },
+      {
+        sidebarId: "bookSideBar",
+        position: "left",
+        label: "Books",
+        to: "/books",
       },
       { to: "/", label: "Blog", position: "left" },
 
@@ -86,6 +92,7 @@ const themeConfig = {
         title: "Docs",
         items: [
           { label: "Blog", to: "/" },
+          { label: "Books", to: "/books" },
           { label: "Tech Hacks", to: "/tech-hack/Linux/disk-usage" },
         ],
       },
@@ -146,7 +153,18 @@ const themeConfig = {
     },
   ],
 } satisfies Preset.ThemeConfig;
-const plugins = [];
+const plugins = [
+  [
+    "@docusaurus/plugin-content-docs",
+    {
+      id: "books",
+      path: "books",
+      routeBasePath: "/books",
+      sidebarPath: "./sidebars.ts",
+      editUrl: "https://github.com/iamdap91",
+    },
+  ],
+];
 const presets = [
   [
     "@docusaurus/preset-classic",
@@ -156,6 +174,7 @@ const presets = [
         sidebarPath: "./sidebars.ts",
         editUrl: "https://github.com/iamdap91",
         routeBasePath: "/tech-hack",
+        breadcrumbs: true,
       },
       blog: {
         ...d2PluginConfig,
@@ -180,10 +199,6 @@ const presets = [
         blogSidebarCount: "ALL",
       },
       theme: { customCss: "./src/css/custom.css" },
-      // gtag: {
-      //   trackingID: "ca-pub-3076159641750066",
-      //   anonymizeIP: true,
-      // },
     } satisfies Preset.Options,
   ],
 ];
