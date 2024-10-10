@@ -1,10 +1,9 @@
 ---
 slug: cors
-title: What is CORS (Cross Origin Resource Sharing)? - Draft
+title: What is CORS (Cross Origin Resource Sharing)?
 authors: [3sam3]
 tags: [browser, http, network]
 date: 2024-10-10T01:00:00
-draft: true
 ---
 
 ## What is `CORS`?
@@ -81,9 +80,9 @@ Client -> Browser:        Making No Request. {
 
 ## How `CORS` Works
 
-browser verifies whether origin allowed by `Access-Control-Allow-Origin` field of header in response.
+browser verifies whether origin is allowed in `Access-Control-Allow-Origin` field of header in response.
 
-This looks upon whether `protocol + host + port` is same.
+This looks upon whether `protocol + host + port` is same or not. ([Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy))
 
 | protocol | host       | port | path | query string | fragment |
 | -------- | ---------- | ---- | ---- | ------------ | -------- |
@@ -99,3 +98,4 @@ This looks upon whether `protocol + host + port` is same.
 
 - [CORS](https://developer.mozilla.org/en-US/docs/Glossary/CORS)
 - [Preflight Request](https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request)
+- [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)
