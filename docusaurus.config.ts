@@ -25,7 +25,7 @@ const themes = [
   [
     "@easyops-cn/docusaurus-search-local",
     {
-      docsRouteBasePath: ["/tech-hack", "/books"],
+      docsRouteBasePath: ["/tech-hack", "/studies"],
       blogRouteBasePath: "/",
       hashed: true,
     },
@@ -57,10 +57,10 @@ const themeConfig = {
         label: "Tech Hacks",
       },
       {
-        sidebarId: "bookSideBar",
+        sidebarId: "studySideBar",
         position: "left",
-        label: "Books",
-        to: "/books",
+        label: "Study Materials",
+        to: "/studies",
       },
       { to: "/", label: "Blog", position: "left" },
 
@@ -92,7 +92,7 @@ const themeConfig = {
         title: "Docs",
         items: [
           { label: "Blog", to: "/" },
-          { label: "Books", to: "/books" },
+          { label: "Study Materials", to: "/studies" },
           { label: "Tech Hacks", to: "/tech-hack/Linux/disk-usage" },
         ],
       },
@@ -158,9 +158,9 @@ const plugins = [
     "@docusaurus/plugin-content-docs",
     {
       ...d2PluginConfig,
-      id: "books",
-      path: "books",
-      routeBasePath: "/books",
+      id: "studies",
+      path: "studies",
+      routeBasePath: "/studies",
       sidebarPath: "./sidebars.ts",
       editUrl: "https://github.com/iamdap91",
     },
