@@ -5,7 +5,7 @@ import { remarkKroki } from "remark-kroki";
 import rehypeRaw from "rehype-raw";
 
 const d2PluginConfig = {
-  remarkPlugins: [[remarkKroki, { server: "https://kroki.io" }]],
+  remarkPlugins: [[remarkKroki, { server: "http://localhost:8000" }]],
   rehypePlugins: [
     [
       rehypeRaw,
