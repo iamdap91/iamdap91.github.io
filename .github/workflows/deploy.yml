@@ -9,6 +9,13 @@ jobs:
   build:
     name: Build Docusaurus
     runs-on: ubuntu-latest
+
+    services:
+      kroki:
+        image: yuzutech/kroki:latest
+        ports:
+          - "8000:8000"
+
     steps:
       - uses: actions/checkout@v4
         with:

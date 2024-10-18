@@ -1,10 +1,6 @@
 services:
   core:
     image: yuzutech/kroki
-    environment:
-      - KROKI_MERMAID_HOST=mermaid
-      - KROKI_BPMN_HOST=bpmn
-      - KROKI_EXCALIDRAW_HOST=excalidraw
     ports:
       - "8000:8000"
 #  mermaid:
