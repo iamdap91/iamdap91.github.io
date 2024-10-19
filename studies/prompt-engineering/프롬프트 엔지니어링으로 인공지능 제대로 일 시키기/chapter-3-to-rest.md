@@ -6,6 +6,7 @@ tags: [book, ai, artificial intelligence, prompt engineering, prompt]
 ---
 
 ## 프롬프트 마켓플레이스
+
 - 양질의 프롬프트를 사고파는 마켓플레이스.
   - [PromptBase](https://promptbase.com)
   - [PromptHero](https://prompthero.com)
@@ -32,7 +33,6 @@ tags: [book, ai, artificial intelligence, prompt engineering, prompt]
 - 문제 해결을 위한 전략 수립
   - 별로 영양가 없음.
 
-
 ### 마케팅
 
 #### 목표
@@ -45,32 +45,39 @@ tags: [book, ai, artificial intelligence, prompt engineering, prompt]
 - AI 이미지 생성 기능을 이용하여 초안 생성.
 - 마케팅 캐치프레이즈 작성
 
-
 ### 인사
+
 #### 목표
+
 - 내외부 인력 관리
   - 인력 개발을 통해 조직 구성원의 역량 강화 & 성과 향상에 기여 ~~(서폿)~~
 
 #### 활용 사례
-- 인사 평가 문장 생성
-- 특정 직무 지원자의 업무역량을 평가할 수 있는 질문지 생성 
 
+- 인사 평가 문장 생성
+- 특정 직무 지원자의 업무역량을 평가할 수 있는 질문지 생성
 
 ### 개발
+
 #### 목표
+
 - 구조 설계
 - 구현
 
 #### 활용 사례
+
 - 코드 생성
 - 검증 (테스트 코드)
 - 문서화
 - 기작성 코드 파악
 
 ### 법무
-#### 목표 
+
+#### 목표
+
 - 법률 검토
 
 #### 활용 사례
+
 - 판례 요약
 - 문서 분석 작업
