@@ -2,7 +2,8 @@
 slug: clear-and-direct
 title: 명확하고 직접적이며 상세하게
 authors: [3sam3]
-tags: [document, doc, ai, artificial intelligence, prompt engineering, prompt]
+tags: [document, doc, ai, artificial intelligence, prompt engineering, prompt, claude, anthropic]
+date: 2024-10-20T01:00:00
 ---
 
 ## 개요

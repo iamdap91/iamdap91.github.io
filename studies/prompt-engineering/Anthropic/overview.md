@@ -2,7 +2,8 @@
 slug: overview
 title: 프롬프트 엔지니어링 개요
 authors: [3sam3]
-tags: [document, doc, ai, artificial intelligence, prompt engineering, prompt]
+tags: [document, doc, ai, artificial intelligence, prompt engineering, prompt, claude, anthropic]
+date: 2024-10-20T00:00:00
 ---
 
 ### 프롬프트 엔지니어링 전에
