@@ -42,7 +42,7 @@ tags: [document, doc, ai, artificial intelligence, prompt engineering, prompt]
 이 섹션의 프롬프트 엔지니어링 페이지는 가장 널리 효과적인 기술에서 더 전문화된 기술로 구성되어 있습니다. 성능 문제를 해결할 때, 이러한 기술을 순서대로 시도하는 것이 좋습니다. 각 기술의 실제 영향은 사용 사례에 따라 다릅니다.
 
 - 프롬프트 생성기
-- 명확하고 직접적으로
+- [명확하고 직접적으로](./clear-and-direct.mdx)
 - 예제 사용 (멀티샷)
 - `Claude`에게 생각할 시간 주기 (사고의 사슬)
 - `XML` 태그 사용
