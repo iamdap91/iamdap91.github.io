@@ -16,7 +16,7 @@ date: 2024-10-10T01:00:00
 
 ## Preflight Request?
 
-Before CORS how CORS cuts off unwanted requests, We have to talk about what preflight request is.
+Before discussing how CORS cuts off unwanted requests, we have to talk about what a preflight request is.
 
 I'll try to make it short.
 
@@ -35,11 +35,11 @@ Browser -> Server.2:  actual request
 Server.2 -> Browser:  actual response
 ```
 
-If you make actual request(by event or something), browser make pre-request to see server is aware using specific methods and headers.
+If you make an actual request (by event or something), the browser makes a pre-request to see if the server is aware of using specific methods and headers.
 
-This is basic behavior browser does before it make request.
+This is basic behavior browser does before it makes a request.
 
-By using this, we can avoid server running which we're not going to take data from and can ensure safety (by getting data from known sources).
+By using this, we can avoid server running which we're not going to take data from and can ensure safety (by getting only getting data from known sources).
 
 ### Without Preflight Request
 
@@ -82,7 +82,7 @@ Client -> Browser:        Making No Request. {
 
 browser verifies whether origin is allowed in `Access-Control-Allow-Origin` field of header in response.
 
-This looks upon whether `protocol + host + port` is same or not. ([Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy))
+This checks whether protocol + host + port is the same or not. ([Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy))
 
 | protocol | host       | port | path | query string | fragment |
 | -------- | ---------- | ---- | ---- | ------------ | -------- |
@@ -90,9 +90,9 @@ This looks upon whether `protocol + host + port` is same or not. ([Same Origin P
 
 ## How to deal with `CORS`?
 
-- Mod server to return `Access-Control-Allow-Origin` field in response.
-  - Try not to use `*`. This could possibly make serious security issues.
-- Use Reverse proxy of Webpack Dev Server.
+- Modify server to return `Access-Control-Allow-Origin` field in response.
+  - Try not to use `*`. This could possibly cause serious security issues.
+- Use a Reverse proxy of Webpack Dev Server.
 
 ## References
 

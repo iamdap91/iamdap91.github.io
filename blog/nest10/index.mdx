@@ -16,7 +16,7 @@ import HighlightOrange from "../../src/components/utils/highlight-orange";
   style={{ maxWidth: "25rem" }}
 />
 
-> There was release of version 10 in Nest.js this june.
+> There was a release of version 10 in Nest.js this June.
 
 There were some changes like
 
@@ -33,12 +33,13 @@ There were some changes like
 npm i --save-dev @swc/cli @swc/core
 nest start -b swc
 ```
+
 That's all you need to do to use `SWC`. \
 It's lightning fast when you use in standard mode.
 
 ## In Monorepo
 
-> When It comes to Monorepo. It's not.
+> When It comes to Monorepo, It's not.
 
 `Nest.js` provides monorepo mode. \
 Let's Try `SWC`.
@@ -76,11 +77,9 @@ It only builds root project of your repository.
 }
 ```
 
-> `SWC`
-> ![swc-build-time](./swc-build-time.png)
+> `SWC` > ![swc-build-time](./swc-build-time.png)
 
-> `Webpack`
-> ![webpack-build-time](./webpack-build-time.png)
+> `Webpack` > ![webpack-build-time](./webpack-build-time.png)
 
 Of course, I configured a `swc-loader` in `webpack`.\
 and I double checked `swc` configuration was imported to `webpack`.
@@ -93,17 +92,17 @@ And One more thing.
 > ![webpack-result](./webpack-result.png)
 
 > If you're using `TypeORM` or `MikroORM`, You'd probably imports your entities like this. \
-This will break your app.
->```ts {2,3} showLineNumbers
+> This will break your app.
+>
+> ```ts {2,3} showLineNumbers
 > {
 > entities: ['dist/**/*.entity.js', 'libs/**/*.entity.js'],
 > entitiesTs: ['libs/**/*.entity.ts']
 > }
 > ```
+>
 > There is a way to not to bundle your files by configuring entry and output of `webpack.config`. \
-But, I won't recommend.
-
-
+> But, I won't recommend.
 
 ## My Conclusion
 
