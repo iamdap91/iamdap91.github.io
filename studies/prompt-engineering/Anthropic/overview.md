@@ -2,7 +2,17 @@
 slug: overview
 title: 프롬프트 엔지니어링 개요
 authors: [3sam3]
-tags: [document, doc, ai, artificial intelligence, prompt engineering, prompt, claude, anthropic]
+tags:
+  [
+    document,
+    doc,
+    ai,
+    artificial intelligence,
+    prompt engineering,
+    prompt,
+    claude,
+    anthropic,
+  ]
 date: 2024-10-20T00:00:00
 ---
 
@@ -43,14 +53,14 @@ date: 2024-10-20T00:00:00
 이 섹션의 프롬프트 엔지니어링 페이지는 가장 널리 효과적인 기술에서 더 전문화된 기술로 구성되어 있습니다. 성능 문제를 해결할 때, 이러한 기술을 순서대로 시도하는 것이 좋습니다. 각 기술의 실제 영향은 사용 사례에 따라 다릅니다.
 
 - 프롬프트 생성기
-- [명확하고 직접적으로](./clear-and-direct.mdx)
-- 예제 사용 (멀티샷)
-- `Claude`에게 생각할 시간 주기 (사고의 사슬)
-- `XML` 태그 사용
-- `Claude`에게 역할 부여 (시스템 프롬프트)
-- `Claude`의 응답 미리 채우기
-- 복잡한 프롬프트 연결
-- 긴 컨텍스트 팁
+- [명확하고 직접적으로](./clear-and-direct.md)
+- [예제 사용 (멀티샷)](./multishot-prompting.md)
+- [`Claude`에게 생각할 시간 주기 (사고의 사슬)](./chain-of-thought.md)
+- [`XML` 태그 사용](./using-xml.md)
+- [`Claude`에게 역할 부여 (시스템 프롬프트)](./role-play.md)
+- [`Claude`의 응답 미리 채우기](./prefill.md)
+- [복잡한 프롬프트 연결](./prompt-chain.md)
+- [긴 컨텍스트 팁](./long-context-prompt-tip.md)
 
 ## 출처
 
