@@ -24,17 +24,21 @@ flowchart LR
 
 ## process
 
-```js showLineNumbers
-db.collection.updateMany({}, [
-  {
-    $set: {
-      Grades: {
-        Class_Grade: "$Class_Grade",
-        Homework_Grade: "$Homework_Grade",
+```js showLineNumbers {4-13}
+db.collection.updateMany(
+  {},
+  // *** Don't forget Array ***
+  [
+    {
+      $set: {
+        Grades: {
+          Class_Grade: "$Class_Grade",
+          Homework_Grade: "$Homework_Grade",
+        },
       },
     },
-  },
-]);
+  ],
+);
 ```
 
 ## dest
