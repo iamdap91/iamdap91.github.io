@@ -1,4 +1,5 @@
 ---
+sidebar_position: 1
 slug: reduce-hallucination
 title: 할루시네이션 줄이기
 authors: [3sam3]

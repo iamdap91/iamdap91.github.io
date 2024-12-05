@@ -1,4 +1,5 @@
 ---
+sidebar_position: 5
 slug: multishot
 title: 멀티샷 프롬프팅을 사용하여 동작 유도
 authors: [3sam3]

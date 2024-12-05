@@ -1,4 +1,5 @@
 ---
+sidebar_position: 4
 slug: long-context-tips
 title: 긴 컨텍스트 프롬프트 팁
 authors: [3sam3]

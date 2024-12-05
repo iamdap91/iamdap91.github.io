@@ -1,4 +1,5 @@
 ---
+sidebar_position: 3
 slug: chain-of-thought
 title: 생각의 사슬
 authors: [3sam3]

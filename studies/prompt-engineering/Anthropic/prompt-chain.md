@@ -1,4 +1,5 @@
 ---
+sidebar_position: 7
 slug: prompt-chain
 title: 프롬프트 체인
 authors: [3sam3]

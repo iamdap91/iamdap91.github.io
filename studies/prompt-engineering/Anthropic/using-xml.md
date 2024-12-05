@@ -1,4 +1,5 @@
 ---
+sidebar_position: 9
 slug: using-xml
 title: XML 태그를 이용하여 프롬프트 구조화
 authors: [3sam3]

@@ -1,4 +1,5 @@
 ---
+sidebar_position: 2
 slug: clear-and-direct
 title: 명확하고 직접적이며 상세하게
 authors: [3sam3]
