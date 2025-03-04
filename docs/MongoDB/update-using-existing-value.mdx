@@ -72,7 +72,7 @@ db.collection.updateMany({}, [
   {
     $set: {
       idWithPrefix: {
-        $concat: ["prefix:", { $toString: "$push.hospitalId" }],
+        $concat: ["prefix:", { $toString: "$id" }],
       },
     },
   },
