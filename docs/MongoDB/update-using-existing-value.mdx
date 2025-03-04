@@ -5,15 +5,18 @@ authors: [3sam3]
 tags: [mongo, mongoose, javascript, query]
 ---
 
-```mermaid
-%%{init: {"flowchart": {"htmlLabels": false}} }%%
-flowchart LR
-    source --> mongoose_query
-    mongoose_query --> dest
+## Basic Usage
 
+```kroki type=d2
+direction: right
+vars: {
+  d2-config.sketch: true
+}
+
+Source -> Mongoose Query -> Dest
 ```
 
-## source
+### Source
 
 ```json showLineNumbers
 {
@@ -22,7 +25,7 @@ flowchart LR
 }
 ```
 
-## process
+### Mongoose Query
 
 ```js showLineNumbers {4-13}
 db.collection.updateMany(
@@ -41,7 +44,7 @@ db.collection.updateMany(
 );
 ```
 
-## dest
+### Dest
 
 ```json showLineNumbers {2}
 {
@@ -49,5 +52,38 @@ db.collection.updateMany(
     "Class_Grade": "b",
     "Homework_Grade": "c"
   }
+}
+```
+
+## When Using Object Type
+
+### Source
+
+```json
+{
+  "id": "67beb8a22b8d0ab3b08c9f6d"
+}
+```
+
+### Mongoose Query
+
+```js {5}
+db.collection.updateMany({}, [
+  {
+    $set: {
+      idWithPrefix: {
+        $concat: ["prefix:", { $toString: "$push.hospitalId" }],
+      },
+    },
+  },
+]);
+```
+
+## Dest
+
+```json
+{
+  "id": "67beb8a22b8d0ab3b08c9f6d",
+  "idWithPrefix": "prefix:67beb8a22b8d0ab3b08c9f6d"
 }
 ```
