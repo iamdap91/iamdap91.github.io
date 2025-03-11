@@ -1,6 +1,6 @@
 ---
 slug: components
-title: 쿠버네티스 컴포넌트
+title: Kubernetes - Components
 authors: [3sam3]
 tags: [kubernetes, k8s]
 date: 2025-03-11T21:00:00

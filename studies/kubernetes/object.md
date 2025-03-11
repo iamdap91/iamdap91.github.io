@@ -1,6 +1,6 @@
 ---
 slug: object
-title: kubernetes - 오브젝트
+title: Kubernetes - Object
 authors: [3sam3]
 tags:
   [
