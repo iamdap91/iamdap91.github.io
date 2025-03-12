@@ -2,7 +2,20 @@
 slug: pod
 title: Kubernetes - Pod
 authors: [3sam3]
-tags: [kubernetes, k8s, pod]
+tags:
+  [
+    kubernetes,
+    k8s,
+    pod,
+    deployment,
+    lifecycle,
+    container,
+    init-container,
+    sidecar-container,
+    ephemeral-container,
+    namespace,
+    downward-api,
+  ]
 date: 2025-03-11T21:00:00
 sidebar_position: 3
 ---
