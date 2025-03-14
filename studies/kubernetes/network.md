@@ -2,7 +2,19 @@
 slug: network
 title: Kubernetes - Networking Model
 authors: [3sam3]
-tags: [kubernetes, k8s, network, service, ingress, publishing]
+tags:
+  [
+    kubernetes,
+    k8s,
+    network,
+    service,
+    ingress,
+    publishing,
+    service discovery,
+    gateway,
+    endpoint,
+    cluster IP,
+  ]
 date: 2025-03-11T21:00:00
 sidebar_position: 5
 ---
@@ -506,7 +518,8 @@ spec:
     - "*"                             # 모든 토폴로지를 의미합니다. 위에 나열된 특정 토폴로지 키가 일치하는 엔드포인트가 없는 경우, 클러스터의 모든 엔드포인트가 고려됩니다. 이는 항상 목록의 마지막 항목이어야 합니다.  
 ```
 
-## 참고
+## Ref
 
+- [서비스, 로드밸런싱, 네트워킹 | Kubernetes](https://kubernetes.io/ko/docs/concepts/services-networking/)
 - [DNS A 레코드란? | Cloudflare](https://www.cloudflare.com/ko-kr/learning/dns/dns-records/dns-a-record/)
 - [DNS AAAA 레코드 | Cloudflare](https://www.cloudflare.com/ko-kr/learning/dns/dns-records/dns-aaaa-record/)

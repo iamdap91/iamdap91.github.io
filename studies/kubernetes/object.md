@@ -19,7 +19,7 @@ date: 2025-03-11T21:00:00
 sidebar_position: 2
 ---
 
-## 개요
+## Overview
 
 > 쿠버네티스 시스템내에서 영속성을 가지는 요소.
 
@@ -182,7 +182,7 @@ kubectl get pods --field-selector status.phase=Running
 
 `metadata.ownerReferences` 필드를 통해 소유 관계가 명시되고, `blockOwnerDeletion` 필드는 가비지 컬렉션 동작을 제어합니다.
 
-## 참고
+## Ref
 
 - [필드 셀렉터 | Kubernetes](https://kubernetes.io/ko/docs/concepts/overview/working-with-objects/field-selectors/)
 - [쿠버네티스 오브젝트 이해하기 | Kubernetes](https://kubernetes.io/ko/docs/concepts/overview/working-with-objects/kubernetes-objects/)
