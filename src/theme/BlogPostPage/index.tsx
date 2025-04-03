@@ -16,6 +16,10 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { DiscussionEmbed } from "disqus-react";
 import hitsSettings from "./hitsSettings";
 import TOC from "@theme/TOC";
+import type BlogPostPageType from "@theme/BlogPostPage";
+import { WrapperProps } from "@docusaurus/types";
+
+type Props = WrapperProps<typeof BlogPostPageType>;
 
 function BlogPostPageContent({ sidebar, children }) {
   const { metadata, toc } = useBlogPost();
@@ -63,7 +67,7 @@ function BlogPostPageContent({ sidebar, children }) {
   );
 }
 
-export default function BlogPostPage(props) {
+export default function BlogPostPage(props: Props) {
   const BlogPostContent = props.content;
   return (
     <BlogPostProvider content={props.content} isBlogPostPage>
