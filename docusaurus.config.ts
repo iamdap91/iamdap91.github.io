@@ -28,6 +28,7 @@ const themes = [
       docsRouteBasePath: ["/tech-hack", "/studies"],
       blogRouteBasePath: "/",
       hashed: true,
+      language: ["en", "ko"],
     },
   ],
   "@docusaurus/theme-mermaid",
