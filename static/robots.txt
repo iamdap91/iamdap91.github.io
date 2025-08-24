@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /hacks/
 
 Sitemap: https://iamdap91.github.io/sitemap.xml
 
