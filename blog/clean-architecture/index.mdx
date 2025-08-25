@@ -9,6 +9,9 @@ date: 2025-08-23T01:00:00
 > If you prefer english, I recommend you to use immersive translation or google translate.
 
 ## 클린 아키텍처란?
+![onion-architecture](./onion-architecture.png)
+출처: [NestJS and Project Structure - What to Do?](https://dev.to/smolinari/nestjs-and-project-structure-what-to-do-1223)
+
 
 클린 아키텍처는 `Robert C. Martin(AKA uncle Bob)`에 의해 고안된 소프트웨어 아키텍처 패턴이다.
 모든 아키텍처 스타일과 마찬가지로 유연하고 테스트하기 쉬우며 유지보수가 용이한 시스템을 만들기 위한 아키텍처 스타일이다.
@@ -41,6 +44,8 @@ date: 2025-08-23T01:00:00
 
 `Nest.js`와 같은 프레임워크를 이용해 프로젝트를 초기 구성할때 [위와 같은 구성](https://github.com/nestjs/nest/tree/master/sample/01-cats-app)으로 프로젝트가 세팅된다.
 `Spring` 등의 프레임워크를 이용하다보면 자연히 손과 눈에 익게되는 구조이기도 하다.
+
+엉클밥은 레이어드 아키텍처는 자연스레 Database-centric한 설계를 유도하게 되므로 데이터베이스 의존성이 전파되는 등의 문제점이 있어 `Clean Architecture`를 고안하게 되었다고 한다.
 
 ## Clean Architecture
 ![clean-architecture.png](clean-architecture.png)
@@ -76,7 +81,7 @@ export class UserService {
 
 ~~GoF 디자인패턴의 추상xx 패턴이 생각난다.~~
 
-```typescript showLineNumbers {13}
+```typescript showLineNumbers {14,17-18}
 export interface IUserRepository {
   findUserById(id: number): Promise<null>;
 }
@@ -88,12 +93,14 @@ export class ConcreteMongoUserRepository implements IUserRepository {
 
 // 클린아키텍처 다이어그램의 use-case 계층. (사용례가 중요하지 계층별 이름을 그대로 사용하는것은 중요하지 않다고 생각하여 service 라는 이름을 사용하였다.)
 // user.service
+@Injectable()
 export class UserService {
   private userRepository: IUserRepository; // 인터페이스에 의존
 
-  constructor(userRepository: IUserRepository) {
-    this.userRepository = userRepository;
-  }
+  constructor(
+    @Inject('ConcreteMongoUserRepository')
+    userRepository: IUserRepository
+  ) {}
 }
 ```
 
@@ -123,6 +130,7 @@ in & output 포트와 그 앞단의 Adapter를 이용해 입출력 응답에 대
 ~~안 그러면 팀원들에게 욕이란 욕은 다 들어먹게 될 것이다.~~
 
 ## References
+-[WSO2 아키텍쳐 레퍼런스](https://github.com/wso2/reference-architecture)
 
 ### Clean architecture
 - [NHN FORWARD - 클린아키텍처 애매한 부분 정해드립니다.](https://www.youtube.com/watch?v=g6Tg6_qpIVc&ab_channel=NHNCloud)
@@ -130,6 +138,11 @@ in & output 포트와 그 앞단의 Adapter를 이용해 입출력 응답에 대
 - [클린 아키텍처란?](https://k-elon.tistory.com/38)
 - [요즘 핫한 Clean Architecture 왜 쓰는거야?](https://meetup.nhncloud.com/posts/345)
 - [Clean Architecture](https://janechoi.tistory.com/79)
+- ~~[nestjs clean architecture](https://v-checha.medium.com/building-enterprise-grade-nestjs-applications-a-clean-architecture-template-ebcb6462c692)~~
+  - ~~[github](https://github.com/v-checha/nestjs-template/)~~
+  - [NestJS and Project Structure - What to Do? 🔥](https://dev.to/smolinari/nestjs-and-project-structure-what-to-do-1223) 위 글을 읽고 아래 글을 읽는 것을 추천한다.
+-[Onion Architecture 🔥](https://medium.com/expedia-group-tech/onion-architecture-deed8a554423)
+
 
 ### Hexagonal architecture
 - [Ready for changes with Hexagonal Architecture](https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749)
