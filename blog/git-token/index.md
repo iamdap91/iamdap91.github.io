@@ -11,14 +11,15 @@ date: 2025-03-10T21:00:00
 remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
 remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
 ```
-It's been a while, but there was a time when authentication using id & pwd on GitHub stopped working. I've set up my PC a few times since then, and each time I had to search for the solution because I couldn't remember how to do it. Now that I'm setting it up again, I think I should organize the information since I keep forgetting.
+There was a time when GitHub suddenly stopped supporting authentication using ID and password.
+Since then, I've had to configure related settings multiple times, but I always forget how I did it and have to look it up again.
+Now I need to set it up once more, and this time, I'm going to write a post about it so I don't forget.
 
 ## Personal Access Token
-It's an alternative to passwords. 
+PAT is alternative to password. 
 
-Even if it's compromised, it doesn't grant access to the entire account, and it's safer because it has an expiration date and allows access only to the configured permissions. 
-
-Of course, it's meaningless if you include all permissions and don't set an expiration date.
+It doesn't grant access to the entire account, and it's safer because it has an expiration date and allows access only to the configured permissions.
+Unless you didn't include all permissions and infinite expiration date.
 
 ### Fine-grained vs Classic
 ![comparison](./comparison.png)
@@ -31,7 +32,7 @@ The fine-grained token is still in beta, [so some features are not supported.](h
 ![Token Generation](./token-gen.png)
 
 ## How to extract token from keychain
-If you forgot what was your PAT, You might able to extract from keychain. 
+If you forgot what your PAT is, You might able to extract from keychain. 
 
 ![keychain](./keychain.png)
 
