@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
-Disallow: /hacks/
+Disallow: /hacks/*
+Disallow: /tags/*
+Disallow: /studies/kubernetes/*
 
-Sitemap: https://iamdap91.github.io/sitemap.xml
+Sitemap: https://blog.3sam3garage.click/sitemap.xml
 
