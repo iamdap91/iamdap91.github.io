@@ -2,9 +2,10 @@
 slug: combinations
 title: Combinations (조합)
 authors: [3sam3]
-tags: [algorithm]
+tags: [algorithm, combinations, 조합, backtracking, 백트래킹, recursion, 재귀]
 date: 2025-09-09T21:00:00
 sidebar_position: 2
+keywords: [조합, combination, 백트래킹, backtracking, 재귀, recursion, 알고리즘, algorithm, typescript, javascript, nCr]
 ---
 
 > If you prefer english, I recommend you to use immersive translation or google translate.
